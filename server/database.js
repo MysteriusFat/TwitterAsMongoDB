@@ -4,10 +4,10 @@ const DATA_BASE_SCREEAN_NAME = 'JoseRam04272499';
 const DATA_BASE_USER_ID = '1249434535269294080';
 
 const cliente = new twitter({
-  consumer_key : 'r4q9ZTdev9x5rEvve82NGDo1g',
-  consumer_secret : '9EXv8SrRjgShdysinMwTweNAPry7dIPWspPgxHhRJ541CeF8sR',
-  access_token_key : '1249434535269294080-dTvrnBoyLSuJ1glINHMAzXNO0AbpHp',
-  access_token_secret : 'IUMOCcgDpoF8VISreuxbgBZP70njXAJkuwx6jOWZoDV4I'
+  consumer_key : '',
+  consumer_secret : '',
+  access_token_key : '',
+  access_token_secret : ''
 });
 
 cliente.get('statuses/user_timeline', {user_id: DATA_BASE_USER_ID}, function (err, data, res){
