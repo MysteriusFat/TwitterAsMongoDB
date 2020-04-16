@@ -1,0 +1,32 @@
+{
+  "tables": [
+    {
+      "id": 1250654463330836480, 
+      "name": "users", 
+      "schema": {
+        "username": {
+          "length": 32, 
+          "type": "string"
+        }, 
+        "password": {
+          "length": 32, 
+          "type": "string"
+        }
+      }
+    }, 
+    {
+      "id": 1250654465843171330, 
+      "name": "post", 
+      "schema": {
+        "data": {
+          "length": 140, 
+          "type": "string"
+        }, 
+        "title": {
+          "length": 32, 
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

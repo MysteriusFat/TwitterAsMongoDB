@@ -15,6 +15,6 @@
 * [x] Postear tweets
 * [x] Ver los tweets posteados
 * [x] Cometar tweets anteriores
-* [ ] Crear una tabla local donde asignar un hilo a cada tabla
-* [ ] Estenografear el json y cifrarlo en una imagen
+* [x] Crear una tabla local donde asignar un hilo a cada tabla
+* [x] Estenografear el json y cifrarlo en una imagen
 * [ ] filtrar hilos dependiendo de la query

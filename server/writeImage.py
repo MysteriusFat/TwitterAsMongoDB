@@ -5,36 +5,38 @@ def Text_to_bits( text ):
     for i in text:
         for bit in bin(ord(i))[2:].zfill(8):
             bits_list.append( bit )
-    bits_list.append( 0xff )
+    for i in range( 8 ):
+        bits_list.append( 1 )
     return bits_list
 
 def Change_last_bit( byte, bit ):
-    return int(bin(byte)[2:].zfill(8)[:-1] + str(bit))
+    return int(bin(byte)[2:].zfill(8)[:-1] + str(bit) )
 
-def Hide( path_image, text ):
+def Hide( path_image, path_out_image, text ):
     image = Image.open( path_image )
-    pixels = image.load()
     size = image.size
+    pixels = image.load()
 
     bits_list = Text_to_bits( text )
-    x = y = 0
+    ctn = 0
 
-    for i in range(0 , len(bits_list), 3):
-        if i < len(bits_list  ):
-            red = pixels[x,y][0], bits_list[i]
-        if i+1 < len(bits_list  ):
-            green = pixels[x,y][1], bits_list[i+1]
-        if i+2 < len(bits_list  ):
-            blue = pixels[x,y][2], bits_list[i+2]
+    for x in range( size[0] ):
+        for y in range(size[1]):
+            red = pixels[x,y][0]
+            green = pixels[x,y][1]
+            blue = pixels[x,y][2]
+            if ctn < len(bits_list):
+                red = int(bin(red)[2:].zfill(8)[:-1] + str(bits_list[ctn]),2 )
+                ctn += 1
+            if ctn < len(bits_list):
+                green = int(bin(green)[2:].zfill(8)[:-1] + str(bits_list[ctn]),2 )
+                ctn += 1
+            if ctn < len(bits_list):
+                blue = int(bin(blue)[2:].zfill(8)[:-1] + str(bits_list[ctn]),2 )
+                ctn += 1
 
-        x += 1
-        if x == size[0]:
-            x = 0
-            y += 1
-            if y == size[1]:
-                y = 0
+            pixels[x,y] = (red ,green,blue)
 
-    image.save('salida.jpg')
-    return True
-
-Hide('./test.jpg',"MENSAJE DE PRUEBA")
+            if ctn == len(bits_list):
+                image.save(path_out_image)
+                return True
