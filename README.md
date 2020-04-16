@@ -6,7 +6,7 @@
 * [x] Enviar peticiones POST
 
 ## back end
-* [x] Crear un servidor con express
+* [x] Crear un servidor con Flask
 * [x] Recivir informacion del front end
 * [x] Verificiar si la informacion es valida
 
