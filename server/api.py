@@ -8,11 +8,11 @@ import os
 
 class Database():
     def __init__( self, name="JoseRam04272499", schema_path="schemas.json"):
-        self.API_KEY = 'r4q9ZTdev9x5rEvve82NGDo1g'
-        self.API_SECRET_KEY = '9EXv8SrRjgShdysinMwTweNAPry7dIPWspPgxHhRJ541CeF8sR'
+        self.API_KEY = ''
+        self.API_SECRET_KEY = ''
 
-        self.ACCESS_TOKEN = '1249434535269294080-4uq2LmIKWjyTz38mCPcbBndFvIgnQq'
-        self.ACCESS_TOKEN_SECRET = 'mN2oScFkVjQefSr52ntC7uyyvqe1XOPonVZO6cmtSxmz4'
+        self.ACCESS_TOKEN = ''
+        self.ACCESS_TOKEN_SECRET = ''
         self.DATABASE_NAME = name
 
         self.SCHEMA_PATH = schema_path
